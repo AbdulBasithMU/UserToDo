@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let result of results">
+            <div class="panel panel-primary">
+                <div class="panel-heading">User Details</div>
+                <div class="panel-body">
+                    <h5><b>User Name:</b> {{result.username}}</h5>
+                    <h6><b>Email:</b> {{result.email}}</h6>
+                    <h6><b>Phone:</b> {{result.phone}}</h6>
+                    <h6><b>Address:</b> {{result.address.street}},{{result.address.city}},{{result.address.zipcode}}</h6>
+                    <h6><b>Website:</b> {{result.website}}</h6>
+                    <h6><b>Company:</b> {{result.company.name}},{{result.company.catchPhrase}},{{result.company.bs}}</h6>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-info" (click)="OnClick(result)">View Todos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

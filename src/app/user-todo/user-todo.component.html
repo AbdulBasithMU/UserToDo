@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">User Details</div>
+                <div class="panel-body">
+                    <b>Add Todo:</b> <input type="text" [(ngModel)]="title" placeholder="Enter Todo Title Here" required/>
+                    <button type='button' class="btn btn-primary btn-sm" (click)="setValue()">Submit</button>
+                    <br><br>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                            <th>Completed</th>
+                            <th>Title</th>
+                            <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let result of userTodoList; let idx = index">
+                            <td><input type="checkbox" [checked]="result.completed" (change)="changeValue(idx)"></td>
+                            <td><label [ngClass]="{'checkedLabel': result.completed}">{{result.title}}</label></td>
+                            <td><button class="btn btn-danger btn-xs" (click)='removeTodo(idx)'>Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-info" (click)="back()">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
